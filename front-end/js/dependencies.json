@@ -1,0 +1,7 @@
+{
+  "dynamicScripts": [
+    "models/",
+    "collections",
+    "views"
+  ]
+}
