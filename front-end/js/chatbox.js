@@ -1,12 +1,12 @@
 var Router = Backbone.Router.extend({
-    chatbox: new Chatbox(),
+    document: new Document(),
     chatPage: new Chat(),
     routes: {
         "*default": "default"
     },
     default: function() {
         this.navigate("");
-        this.chatbox.selectPage(this.chatPage);
+        this.document.selectPage(this.chatPage);
     }
 });
 $(function() {

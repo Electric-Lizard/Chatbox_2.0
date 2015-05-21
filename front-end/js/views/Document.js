@@ -1,23 +1,23 @@
 /**
  * Created by User on 5/17/2015.
  */
-var Chatbox = Backbone.view.extend({
-    $targetPage: null,
+var Document = Backbone.view.extend({
+    $pageContainer: null,
     templateText: null,
     initialize: function() {
         this.render();
     },
     render: function() {
         this.setElement(this.template());
-        this.$targetPage = this.$el.find('target-page');
+        this.$pageContainer = this.$el.find('#page-container');
         var $body = $('body');
         $body.html(this.$el);
     },
     selectPage: function(page) {
-        page.render(this.$targetPage);
+        page.render(this.$pageContainer);
     },
     clearPage: function() {
-        this.$targetPage.html('');
+        this.$pageContainer.html('');
     },
     template: function(data) {
         if (!this.templateText) {
