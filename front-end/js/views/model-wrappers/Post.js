@@ -1,4 +1,5 @@
 /**
+ * Post View
  * Created by cosysoft on 21.05.15.
  */
 var Post = Backbone.view.extend({
@@ -8,6 +9,10 @@ var Post = Backbone.view.extend({
         this.model = model;
         this.id = model.id;
     },
+    render: function($postContainer) {
+        this.setElement(this.template({model: this.model}));
+        $postContainer.append(this.$el);
+    },
     getModel: function() {
         return this.model;
     },
@@ -16,5 +21,19 @@ var Post = Backbone.view.extend({
     },
     deleteModel: function() {
 
+    },
+    template: function(data) {
+        if (!this.templateText) {
+            var pageObj = this;
+            $.ajax({
+                url: this.templateLocation,
+                async: false,
+                type: 'get',
+                success: function (html) {
+                    pageObj.templateText = html;
+                }
+            });
+        }
+        _.template(this.templateText, data);
     }
 });

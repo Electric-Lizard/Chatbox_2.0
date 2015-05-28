@@ -1,4 +1,5 @@
 /**
+ * Abstract page class
  * Created by User on 5/19/2015.
  */
 var Page = Backbone.view.extend({

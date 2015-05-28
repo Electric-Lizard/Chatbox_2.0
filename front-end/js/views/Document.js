@@ -1,15 +1,18 @@
 /**
+ * Main document renderer
  * Created by User on 5/17/2015.
  */
 var Document = Backbone.view.extend({
     $pageContainer: null,
     templateText: null,
     initialize: function() {
-        this.render();
+        //this.render();
     },
     render: function() {
+        var pageContainerSelector = '#page-container';
+
         this.setElement(this.template());
-        this.$pageContainer = this.$el.find('#page-container');
+        this.$pageContainer = this.$el.find(pageContainerSelector);
         var $body = $('body');
         $body.html(this.$el);
     },
@@ -31,6 +34,6 @@ var Document = Backbone.view.extend({
                 }
             });
         }
-        _.template(this.templateText, data)
+        return _.template(this.templateText, data);
     }
 });
