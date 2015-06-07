@@ -5,6 +5,7 @@
 var Post = Backbone.view.extend({
     model: null,
     id: null,
+    templateLocation: 'templates/model-wrappers/post.html',
     initialize: function(model) {
         this.model = model;
         this.id = model.id;

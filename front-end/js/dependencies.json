@@ -1,7 +1,5 @@
-{
-  "dynamicScripts": [
-    "models/",
-    "collections",
-    "views"
-  ]
-}
+[
+  "models/",
+  "collections",
+  "views"
+]

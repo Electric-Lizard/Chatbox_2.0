@@ -1,0 +1,71 @@
+<div class="chat-page">
+    <div class="reply-form">
+        <form action="" method="POST" id="post-input">
+            <div class="additional-post-info">
+                <input type="text" name="username" placeholder="Pozornik" class="username-input" />
+                <input type="text" name="title" class="title-input" placeholder="Name of a instance of the pozor">
+                <input type="email" name="email" class = "email-input" placeholder="pzr@mail.com" />
+                <input accesskey="s" type="submit" value="MAKE POZOR" class="post-button post-submit">
+            </div>
+            <textarea id="message" form="post-input" class="content-input" name="content" maxlength="1000"
+                      placeholder=":pozor:" required autofocus></textarea>
+        </form>
+    </div>
+
+    <div class="additional-menu-button">Additional pozor</div>
+    <div class="additional-menu">
+        <span class="main-smiles">
+           smaelz
+        </span>
+        <span class="BB-codes">
+            <span class="selects">
+                <select id="font">
+                    <option value="" selected>Font</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                </select>
+                <select id="color">
+                    <option value="" selected>Color</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+                <select id="size">
+                    <option value="" selected>Size</option>
+                    <option value="8pt">8pt</option>
+                    <option value="10pt">10pt</option>
+                    <option value="12pt">12pt</option>
+                    <option value="14pt">14pt</option>
+                    <option value="18pt">18pt</option>
+                    <option value="24pt">24pt</option>
+                    <option value="36pt">36pt</option>
+                    <option value="54pt">54pt</option>
+                    <option value="72pt">72pt</option>
+                </select>
+            </span>
+            <br>
+            <span class="group">
+                <img src="/assets/format-icons/b.svg" class="format-button" title="Bold" alt="b" id="b-button">
+                <img src="/assets/format-icons/i.svg" class="format-button" title="Italic" alt="i" id="i-button">
+                <img src="/assets/format-icons/u.svg" class="format-button" title="Underline" alt="u" id="u-button">
+                <img src="/assets/format-icons/s.svg" class="format-button" title="Strikethrough" alt="s" id="s-button">
+            </span>
+            <span class="group">
+                <img src="/assets/format-icons/left.svg" class="format-button" title="Left" alt="left" id="left-button">
+                <img src="/assets/format-icons/center.svg" class="format-button" title="Center" alt="center" id="center-button">
+                <img src="/assets/format-icons/right.svg" class="format-button" title="Right" alt="right" id="right-button">
+            </span>
+            <span class="group">
+                <img src="/assets/format-icons/img.svg" class="format-button" title="image" alt="img" id="img-button">
+                <img src="/assets/format-icons/url.svg" class="format-button" title="url" alt="url" id="url-button">
+                <img src="/assets/format-icons/spoiler.png" class="format-button" title="spoiler" alt="spoiler" id="spoiler-button">
+            </span>
+        </span>
+    </div>
+    <div id="target-page"></div>
+</div>

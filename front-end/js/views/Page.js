@@ -3,6 +3,7 @@
  * Created by User on 5/19/2015.
  */
 var Page = Backbone.view.extend({
+    templateText: '',
     templateLocation: '',
     render: function($pageContainer) {
         var data = this.collection ? this.collection.models : null;
@@ -15,7 +16,7 @@ var Page = Backbone.view.extend({
             $.ajax({
                 url: this.templateLocation,
                 async: false,
-                type: 'get',
+                type: 'GET',
                 success: function (html) {
                     pageObj.templateText = html;
                 }
