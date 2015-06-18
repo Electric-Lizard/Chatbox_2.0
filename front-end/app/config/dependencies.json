@@ -1,0 +1,9 @@
+[
+  "app/js/models/PostModel.js",
+  "app/js/collections/Posts.js",
+  "app/js/views/model-wrappers/Post.js",
+  "app/js/views/AbstractPage.js",
+  "app/js/views/pages/Chat.js",
+  "app/js/views/Document.js",
+  "app/js/Router.js"
+]

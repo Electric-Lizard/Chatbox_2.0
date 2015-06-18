@@ -11,6 +11,7 @@ var Router = Backbone.Router.extend({
         "*default": "defaultRoute"
     },
     initialize: function() {
+        _.bindAll(this, 'defaultRoute');
         this.document.render();
     },
     defaultRoute: function() {
@@ -18,3 +19,4 @@ var Router = Backbone.Router.extend({
         this.document.selectPage(this.pages.chat);
     }
 });
+//@ sourceURL=/app/js/Router.js

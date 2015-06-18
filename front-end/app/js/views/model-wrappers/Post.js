@@ -2,11 +2,12 @@
  * Post View
  * Created by cosysoft on 21.05.15.
  */
-var Post = Backbone.view.extend({
+var Post = Backbone.View.extend({
     model: null,
     id: null,
-    templateLocation: 'templates/model-wrappers/post.html',
+    templateLocation: 'app/templates/model-wrappers/post.html',
     initialize: function(model) {
+        _.bindAll(this, 'render', 'getModel', 'updateModel', 'deleteModel', 'template');
         this.model = model;
         this.id = model.id;
     },
@@ -38,3 +39,4 @@ var Post = Backbone.view.extend({
         _.template(this.templateText, data);
     }
 });
+//@ sourceURL=/app/js/views/model-wrappers/Post.js

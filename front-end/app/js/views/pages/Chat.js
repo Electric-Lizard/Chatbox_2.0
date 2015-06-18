@@ -2,15 +2,21 @@
  * Chat page class
  * Created by User on 5/19/2015.
  */
-var Chat = Page.extend({
+var Chat = AbstractPage.extend({
     events: {
-        'sync': 'clearInfo'
+        'sync': 'clearInfo',
+        'render': 'getPosts'
     },
     $postsContainer: null,
-    pageLocation: 'templates/pages/chat.html',
+    pageLocation: 'app/templates/pages/chat.html',
     model: new PostModel(),
     collection: new Posts(this.model),
     posts: new Array(),
+    initialize: function() {
+        this.commonInitialize();
+        _.bindAll(this, 'getPosts', 'renderInfo', 'clearInfo');
+        //this.on('render', this.getPosts());
+    },
     getPosts: function() {
         this.renderInfo("Loading posts");
         this.collection.fetch();
@@ -28,3 +34,4 @@ var Chat = Page.extend({
 
     }
 });
+//@ sourceURL=/app/js/views/pages/Chat.js

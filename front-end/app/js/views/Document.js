@@ -2,11 +2,11 @@
  * Main document renderer
  * Created by User on 5/17/2015.
  */
-var Document = Backbone.view.extend({
+var Document = Backbone.View.extend({
     $pageContainer: null,
-    templateText: null,
+    compiledTemplate: null,
     initialize: function() {
-        //this.render();
+        _.bindAll(this, 'render', 'selectPage', 'clearPage', 'template');
     },
     render: function() {
         var pageContainerSelector = '#page-container';
@@ -23,17 +23,18 @@ var Document = Backbone.view.extend({
         this.$pageContainer.html('');
     },
     template: function(data) {
-        if (!this.templateText) {
+        if (!this.compiledTemplate) {
             var chatboxObj = this;
             $.ajax({
-                url: 'templates/main.html',
+                url: 'app/templates/main.html',
                 async: false,
                 type: 'get',
                 success: function (html) {
-                    chatboxObj.templateText = html;
+                    chatboxObj.compiledTemplate = Handlebars.compile(html);
                 }
             });
         }
-        return _.template(this.templateText, data);
+        return chatboxObj.compiledTemplate(data);
     }
 });
+//@ sourceURL=/app/js/views/Document.js
